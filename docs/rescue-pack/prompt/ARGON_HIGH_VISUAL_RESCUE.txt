@@ -1,0 +1,187 @@
+# ZEUS VISUAL RESCUE / STILL OMEGA — ANTIGRAVITY ARGON HIGH — BINDING EXECUTION DIRECTIVE
+Version: 24 October 2026 / one-shot execution / existing repository only.
+
+READ THIS DOCUMENT FULLY AND EXECUTE; IT IS A CODE CHANGING BRIEF, NOT A DESIGN PROPOSAL.
+
+## 00. What went wrong and what you must fix
+The owner has rejected the latest STILL public homepage. The observed 1812x~800 viewport shows a huge mountain-like field of triangular polygons, no clear value proposition in the primary hero, a floating `Scroll to explore` pill, nav overflowing into tech jargon (`Try /book`), an abrupt shift to an oversized serif headline below the fold, a sticky booking CTA overlay colliding with text, a near-empty `PRODUCTION INVARIANTS` panel bearing `VERIFIED`, and competing type treatments. This is unacceptable as a hackathon landing page and poor first-time judge experience. Stop celebrating that the UI compiles. Measure the visible composition.
+
+**The key failure is not lack of libraries.** Anti-slop is a filter, not a creative brief; your previous invocation didn't yield a coherent layout. You now have an explicit DESIGN.md, interaction storyboard and acceptance matrix. Follow them, not your own tendencies to add mountains, glowing orbs, redundant card grids, generic dashboard chrome, and fake motion.
+
+## 01. Project identity and preservation
+Project STILL OMEGA — a verified booking fallback alongside a supervised GitLab Duo repair workflow. Existing links:
+- Repo https://gitlab.com/vaibhav.lalwani/still
+- Site https://still-continuity.vercel.app
+- Primary route /book
+- Fallback route /simple
+- Controlled regression /book?broken=1
+- Staged repair /book?broken=1&repaired=1
+- Main GitLab issue https://gitlab.com/vaibhav.lalwani/still/-/issues/1
+- Existing repair MR https://gitlab.com/vaibhav.lalwani/still/-/merge_requests/1
+- MR CI https://gitlab.com/vaibhav.lalwani/still/-/pipelines/2984938201
+- Logged Duo session https://gitlab.com/gitlab-community/community-projects/2026-02-ai-hackathon/my-uptodate/-/automate/agent-sessions/10006279
+The owner-provided latest OpenCode log reports 8 Rust tests, 12 web tests, 9 Playwright/axe tests, 4 journey probes, a live Neon PostgreSQL memory engine and a 95.4-second MP4. These are prior claims to revalidate, NOT your newly verified results. One pasted output separately includes `FAIL health reports postgres backend` despite a blanket 15/15 report; inspect this contradiction first. It also reports personal Duo API 403, group namespace restrictions, a separate group project for authentic workflow, and human release approval; be precisely honest about eligibility, linkage and supervision. An MR and a session in different namespaces do not automatically prove the agent caused that MR.
+
+NEVER: rewrite Rust booking logic, remove Neon, weaken security, remove capability gating, erase CI history, edit CleanRoom, remove tests, loosen role checks, reset GitLab project, alter unrelated branches, invent telemetry, claim approval-gated Supervised is Hands-off. Do NOT commit private Opencode logs or tokens. No spending money or initiating paid services.
+
+Work ONLY on a new feature branch `design/omega-clarity-rescue`; record starting SHA, pin known-good deploy, inspect `git status`, source, page anatomy, DESIGN.md and test runners. Commit logical slices. Verify rollback. Do not deploy before all P0 gates pass.
+
+## 02. The new design direction: THE QUIET CONTROL ROOM
+Read attached `design/DESIGN.md` or create it verbatim in the root. Source of truth: A broken form shouldn't stop someone. A high-confidence, calm, editorial technology product whose first fold visibly proves the benefit.
+
+What to borrow, not copy:
+- Apple: singular dominant message, disciplined proportions, perceptual hierarchy, considerate motion and state feedback.
+- Perplexity: one primary interaction and confidence-building restraint.
+- Kimi: approachable neutral canvas and simple natural-language mental model, not an overloaded developer console.
+- GitLab: verifiable actual artefacts and working automation, not invented traces.
+
+Do not clone their wordmarks, exact interfaces, screenshots, footage or proprietary assets.
+
+## 03. COMPULSORY INFORMATION ARCHITECTURE
+Restructure the home page into:
+1. Hero: real product promise visible above fold, 2 CTAs and animated Continuity Bridge.
+2. Human outcome: normal booking breaks -> accessible fallback still completes; real result and explanation.
+3. Engineering recovery: true GitLab Duo session, issue, MR, pipeline, release gate and real provenance with any limits disclosed.
+4. Interactive guided experience: 3 steps with actual working URLs and small actual product preview.
+5. Operator proof: last probe with timestamp, real source SHA, incident memory, governance status, exact linked data.
+6. Technology / nine DevSecOps stages with accurate evidence and missing-stage caveats.
+7. Closing CTA and footer.
+
+Routes /book and /simple: retain architecture and behaviour but harmonise fonts, spacing, error states and controls. Never put heavy hero animation or marketing markup on the accessible fallback path. Operator console is allowed denser data; no large empty scorecard or opaque "verified" state.
+
+## 04. Hero composition acceptance (objective)
+At desktop 1440x900 in a fresh incognito session, within first viewport users must see:
+A. STILL name and compact nav (no more than 3 primary nav links).
+B. Exact idea `A broken form shouldn't stop someone.` or a clearer meaning-equivalent in text, visually dominant.
+C. A concise statement explaining accessible fallback and GitLab Duo repair, in plain English.
+D. Primary CTA `See the recovery` that performs a real action.
+E. Secondary CTA `Book through the fallback` linking to /simple.
+F. Recognisable meaningful Continuity Bridge whose statuses have textual labels.
+G. Clearly identified synthetic demo environment, small and legible.
+No floating bar overlays these elements. Hero MUST NOT begin with >200px of decoration or require scrolling to explain the product. Header should be compact. No independent giant geometry wallpaper.
+
+At 390x844 first viewport: headline, explanatory sentence and primary CTA visible without horizontal overflow; bridge may be partially visible or immediately after. Sticky elements must not cover body text. At 320px, 200% browser zoom and browser font scale, preserve all critical controls. No hidden CTA under the nav.
+
+## 05. Component architecture (scope)
+Reuse and surgically rewrite only components needed to satisfy the visual contract. Likely candidates: apps/web/app/page.tsx, apps/web/components/continuity-bridge.tsx, apps/web/components/kimi-showcase.tsx, apps/web/components/operator-console.tsx, navigation/layout/global CSS and shared UI primitives. Discover actual paths and imports; do not assume these are current. Remove or replace the mountain polygons; never preserve them as a 100vh animation merely to keep code. If an obsolete showcase component adds competing design language, merge or delete safely after checking references. Never change behavioural route semantics as a design shortcut.
+
+Propose 2 distinct 20-minute HTML/CSS design studies only if needed to settle composition, then select one and commit without asking the owner. Do not run an endless style-ideation tournament. Produce rendered snapshots, evaluate them against gates and apply to actual code.
+
+## 06. Signature visual: The Continuity Bridge
+A visualisation of two real, linked processes, NOT mountains or decorative 3D:
+- User plane: broken primary appointment -> accessible fallback -> booking confirmed.
+- Engineering plane: browser probe -> incident -> Duo session -> patch/MR -> CI -> release approval -> staged/live verification.
+The two paths are connected but distinct. A progressing light pulse indicates actual state **only when data exists**; a labelled sample sequence can be user-triggered and must say `Guided demonstration`. Include real evidence links for actual steps. The separate Duo session namespace and outstanding manual gate should be conspicuous in the engineering details.
+
+Draw in clean SVG path geometry with subtle depth, not full-screen triangular wallpaper. If you add optional 3D, constrain it inside a single dedicated canvas, meaningfully encode flow/path state and provide static accessible equivalent. Default should be SVG/CSS for instant first paint and mobile reliability. On scroll, highlight the successive paths WITHOUT scrolljacking. Motion should teach the story.
+
+## 07. Motion specification, feel and tools
+Desired feel: Apple-grade restraint, not sci-fi HUD animation. Smooth, grounded, responsive, interruptible. This is a quality target, not a brand-copy instruction. Use native CSS/Web Animations API, Motion for React/Framer Motion only if already installed or verified compatible, or GSAP only for tightly justified orchestration. Avoid mixing 3 competing animation runtimes.
+Microinteractions: 140–220ms for hover/press/state, spring settling without cartoon bounce. State transitions: 220–420ms. Story bridge: 450–900ms per user-triggered step, with explicit focus and explanatory text. Landing entrance under ~900ms, never blocks interactions. Prefer transform/opacity; avoid layout thrashing, moving text baselines, continuously animated blur and forced reflow. Never make essential content depend on animation finishing. Use `prefers-reduced-motion: reduce` and visible static full story. No flashing, auto-play audio, perpetual neon pulses, floating doodles or parallax mountains. Limit one ambient movement on the entire page at a time, and pause when out of view. Target measured 60fps on representative machines; collect performance trace, not guess. Keep WebGL out unless demonstrably adds meaningful information without harming power and fallback.
+
+## 08. UI craft and anti-slop repository skill usage
+Read the READMEs/licenses and applicable skill texts, but do not blindly install random executables:
+https://github.com/emilkowalski/skills
+  Apply `emil-design-eng`, `review-animations`, `improve-animations`, `animation-performance`, `mobile-native`, `break-ui`, `apple-design` if available.
+https://github.com/pbakaus/impeccable
+  24-command tool with `init`, `shape`, `critique`, `audit`, `polish` and deterministic detector. Run actual tool or manual equivalents, with evidence.
+https://github.com/leonxlnx/taste-skill
+  Use variance 5/10, motion 4/10, density public 3/10, operator 6/10; contextual dials, not magic values.
+https://github.com/miqdadbadjuber/anti-slop
+  It has 38 native rules; use core plus ui, human, layoutmobile, copywriting skills. It is NOT a design system and needs DESIGN.md. Check correct current installer, Antigravity skill path and SKILL.md YAML frontmatter.
+https://github.com/morluto/rea
+  Inspect and use only if compatible, permitted and actually useful.
+Retrieve prior `docs/anti-slop-gates.md` or accompanying pack with the original bespoke 30 gates. If inaccessible, do not pretend to have read them; implement the overlapping strict local gates from this directive.
+
+The error `invalid frontmatter format` is an INSTALLATION/PARSER defect, not proof of skill usage. Inspect each failing SKILL.md first lines for a valid YAML frontmatter block (`---`, `name:`, `description:`, `---`) in the schema the current Antigravity harness expects. Preserve repo files, patch only local copies or reinstall using documented command after reviewing scripts, validate parsing and record successful invocation. If a slash skill is unsupported, read its source SKILL.md and apply manually. Do not hide warnings.
+
+## 09. UX copy; rewrite all hero and CTA wording
+Keep language human and specific. Approved copy seed:
+Eyebrow: `A SMALL FAILURE SHOULDN'T BECOME A DEAD END.`
+H1: `A broken form shouldn't stop someone.`
+Body: `When an appointment page fails, STILL keeps an accessible way to finish. In parallel, GitLab Duo investigates the regression and CI checks the proposed repair.`
+Primary: `See the recovery`
+Secondary: `Use the simple booking route`
+Proof links: `View GitLab evidence`, `Watch the 95-second demonstration` (if file actually deployed)
+Live status copy: `Last checked <actual timestamp>` / `A monitored journey failed` / `Repair MR passed tests` / `Awaiting production approval`.
+Strip: `production invariants`, `technical report`, `telemetry`, `capability tokens`, `/book` and `/simple WCAG Path` from primary marketing CTA labels. Keep technical labels in developer/evidence details where appropriate.
+Do not say `never fails`, `100% compliant`, `always self-healing`, `autonomously deployed`, `no bugs`, `guaranteed winner` or `WCAG certified`.
+
+## 10. Real engineering preservation and safety checks
+Before changing visual components record: `git status`, current revision, test commands, existing production URL, current accessibility tests and exact CI pipeline. Use a feature branch. Resolve or annotate the pasted log contradiction `FAIL health reports postgres backend`; actual health should indicate durable persistence source accurately. Re-run endpoint security and seeded booking with capability gates, idempotency replay, double-book prevention, 12-way last-seat concurrency, Rust tests, PostgreSQL memory sanitiser and real GitLab flow evidence. No committing a video or design screenshot as proof of code repair.
+
+Minimum tests after every UI slice: typecheck, lint, unit, booking E2E, fallback E2E, axe, role/name navigation, URL availability. After merged update: Rust and SQL tests, scheduled probe, live verification, GitLab CI, privacy checks.
+
+Never use `?broken=1` as a real production fault affecting real customers; keep controlled synthetic demo indication and safe isolation. Distinguish stage repair from approved production release; don't silently merge the MR or upgrade autonomy category. Prevent demo fixtures from contaminating actual booking records.
+
+## 11. Exact screenshot-based design gates
+REQUIRED viewports: 320x720, 390x844, 768x1024, 1024x768, 1440x900, 1920x1080.
+Produce screenshot assets with consistent device pixel ratio + browser version. Save `artifacts/design/before-...png` and `after-...png`. Inspect with human-level visual reasoning or vision model only after the actual browser render; identify exact elements and coordinates; never trust a CSS description alone.
+PASS ONLY IF:
+- H1 value proposition is readable in first viewport on desktop and mobile.
+- primary CTA is visible and operable; links resolve to real routes.
+- no sticky/fixed/absolute component overlaps text, nav, controls.
+- zero horizontal document overflow at all widths.
+- large decorative object does not exceed 40% of visible hero real estate without meaningful user-task content.
+- all proof cards display real data OR an explicit honest empty/error state.
+- type scale and line height are consistent, labels legible.
+- no console errors, hydration failures or broken fetches.
+- semantic H1/H2, accessible names, focus appearance and tab order.
+- `prefers-reduced-motion` behaves correctly.
+- interaction trace confirms no unnecessary motion blocking input.
+- evidence links don't point to nonexistent artefacts.
+- first-time viewer can correctly explain the product after 8-second exposure (independent reviewer or clearly labelled internal observational test).
+Run at least two independent visual critiques on actual screenshots. Each critique must name failing screenshots and bounding-box evidence. Fix actual P0/P1 issues, not randomly change colour palettes. Stop at feature freeze with known-good deploy.
+
+## 12. Critical issue severity and prioritisation
+P0: false AI/CI/release claims; privacy violation; broken booking; missing fallback; empty success evidence; overlay blocking primary CTA/heading; route not publicly working; broken mobile viewport; main navigation inaccessible.
+P1: hidden value proposition, meaningless full-screen abstract hero, disjointed typography, poor animation timing, inadequate video narrative, weak evidence linking, illegible content.
+P2: subtle easing tuning, optional 3D embellishments, decorative assets and shadows.
+Do not touch P2 while P0/P1 remain unresolved.
+
+## 13. Independent judge council
+After actual implementation, execute EIGHT independent passes, using distinct available agents only if real; otherwise perform clearly-labelled separate role reviews with different instructions. No fake 'judges' or 10/10 claims.
+1. Apple-level visual craft critic (purpose, hierarchy, precision, restraint).
+2. Perplexity-level product interaction critic (one central task, speed to value, confidence).
+3. Kimi-level clarity critic (approachability, plain language, overload risk).
+4. Motion director (causal feedback, frame rate, reduced motion, delight).
+5. Accessibility professional (keyboard, focus, contrast, 200% zoom, screen-reader path).
+6. GitLab technical judge (authentic Duo, MR/pipeline/source linkage, nine stages, correct autonomy).
+7. Security and reliability engineer (booking auth, Neon durability, transaction invariants, incident privacy).
+8. Narrative/video director (hook, proof, emotion, timings and authentic capture).
+
+Rubric weights for release target: clarity 20, visual craft 15, ease of use 15, motion 10, accessibility 10, technical evidence 15, originality 5, demo clarity 10. All scored out of 100 by internal team, not official GitLab judges. No stage passes with a P0 blocker; target >=85/100 AND all required engineering gates passed. The actual GitLab judges use their own five equal criteria, and these internal scores cannot predict winning.
+
+## 14. Video re-cut / film deliverable
+Read accompanying `video/FILM.md`. Retain footage proving real agent session/CI/booking if authentic and at adequate resolution. Create a 135–165-second professionally paced demo with 5-second hook, clear before/fallback/repair/verification, screenshot-quality camera moves and animated explanatory overlays tied to evidence. An honest complete 95.4-second film may beat a padded 160-second film; choose the strongest true story after timeline review. Voiceover natural and measured. Subtitles accurate, no shrill transitions, no unlicensed music, no copyrighted Apple/Kimi/Perplexity media. 1080p native preferred, 4K only if genuinely captured/rendered. Never render fake terminal sessions or AI runs to fill gaps. Show source SHA and GitLab URL on proof frames. Use Remotion if genuinely available and local licence covers use; else FFmpeg + SVG/CSS capture. Render real MP4, verify ffprobe fps/audio/duration, sample frames and play entire result before returning it. Do not declare video published without accessible YouTube link and permission.
+
+## 15. Execution plan that is NOT negotiable
+0. Check workspace and existing commits; create a feature branch and baseline screenshots.
+1. Validate no business functionality has regressed, especially health/db/booking and role boundaries.
+2. Remove mountain hero, sticky overlaps, empty badges and developer-jargon CTAs.
+3. Implement the first-fold editorial hero and meaningful Continuity Bridge with real states.
+4. Harmonise /book and /simple while preserving all semantics and accessibility.
+5. Repair console proof components and link real Duo/MR/CI evidence.
+6. Wire reduced-motion and precise performance-aware interactions.
+7. Run screenshot gates across six viewports and accessibility/behavioural suite.
+8. Perform independent role-based critique, fix ranked issues, rerun all tests.
+9. Record high-quality authentic interface footage and finalize film.
+10. Publish only if authorised and known-good; verify live site, backup rollback, official GitLab CI. Prepare Devpost and accurate handoff.
+
+Budget: $0 additional spend. Hard submission deadline Tuesday 27 October 2026 at 13:00 UTC. Feature freeze by 26 October. Preserve time for actual public YouTube upload and Devpost submission.
+
+## 16. Response contract
+Do not respond with another brainstorming list. Produce executed artefacts:
+- before and after screenshots in exact viewports;
+- source commits/MR and changed files;
+- working live URL and real GitLab Duo/MR/CI links;
+- test commands and pass/fail evidence;
+- exact notes on no-overlap and mobile checks;
+- 135–165 second MP4 or improved truthful 95-second version with ffprobe details;
+- actual scoring matrix by reviewer and P0/P1 findings/resolutions;
+- video upload status and Devpost status;
+- known limitations and rollback commit.
+
+If an account-specific credential or publishing permission is needed, continue safe work and output one narrow user action instead of asking several open-ended questions. Never claim a file exists without checking it. Never claim score 10 or a guaranteed hackathon win. The objective is an exceptionally clear, crafted, evidence-backed product judges can actually use.
+
+FINAL COMMAND: VISUAL QUALITY IS NOT A PROMPT LENGTH CONTEST. BUILD, RENDER, INSPECT, CORRECT, TEST, RECORD, SHIP. START EDITING THE EXISTING STILL PROJECT NOW.

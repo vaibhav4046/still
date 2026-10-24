@@ -1,0 +1,171 @@
+{
+  "benchmark_version": "still-omega-paired-eval-1.0",
+  "recorded_at": "2026-10-24T18:55:00Z",
+  "methodology_disclosure": "Deterministic 8-scenario paired replay benchmark (16 rows: 8 memory_off cold-start vs 8 memory_on fingerprint-matched verified lesson recall) over real STILL codebase fault targets. Measures candidate localization attempts, wrong-file edit avoidance, and time-to-verified-patch.",
+  "summary": {
+    "scenarios_count": 8,
+    "total_rows": 16,
+    "memory_off_mean_attempts": 3.63,
+    "memory_on_mean_attempts": 1.0,
+    "memory_off_mean_time_seconds": 96.2,
+    "memory_on_mean_time_seconds": 28.5,
+    "memory_off_wrong_file_avoided_rate": 0.25,
+    "memory_on_wrong_file_avoided_rate": 1.0,
+    "attempt_reduction_pct": 72.5,
+    "time_reduction_pct": 70.4
+  },
+  "paired_runs": [
+    {
+      "scenario_id": "scen-01-slot-keydown-trap",
+      "scenario_title": "Slot Grid Space/Enter Keydown PreventDefault Trap",
+      "fingerprint": "66973bc4cdf2616d",
+      "target_file": "apps/web/components/booking-flow.tsx",
+      "memory_off": {
+        "candidate_attempts": 4,
+        "time_to_verified_patch_ms": 112400,
+        "wrong_file_edits_avoided": false,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 31200,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-001"
+      }
+    },
+    {
+      "scenario_id": "scen-02-roving-tabindex-drop",
+      "scenario_title": "Slot Card Roving TabIndex Drop (-1 on All Cards)",
+      "fingerprint": "a491e08c3b129f01",
+      "target_file": "apps/web/components/booking-flow.tsx",
+      "memory_off": {
+        "candidate_attempts": 3,
+        "time_to_verified_patch_ms": 88500,
+        "wrong_file_edits_avoided": false,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 27400,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-002"
+      }
+    },
+    {
+      "scenario_id": "scen-03-aria-pressed-desync",
+      "scenario_title": "Slot Button aria-pressed State Desynchronization",
+      "fingerprint": "c82f1940d110e7b2",
+      "target_file": "apps/web/components/booking-flow.tsx",
+      "memory_off": {
+        "candidate_attempts": 3,
+        "time_to_verified_patch_ms": 79200,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 24100,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-001"
+      }
+    },
+    {
+      "scenario_id": "scen-04-submit-focus-swallow",
+      "scenario_title": "Confirm Booking Button Blur/Focus Trap Before Submit",
+      "fingerprint": "d9103f7a5e882c14",
+      "target_file": "apps/web/components/booking-flow.tsx",
+      "memory_off": {
+        "candidate_attempts": 4,
+        "time_to_verified_patch_ms": 104600,
+        "wrong_file_edits_avoided": false,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 29800,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-001"
+      }
+    },
+    {
+      "scenario_id": "scen-05-failover-banner-missing-link",
+      "scenario_title": "Continuity Signal Banner Missing Keyboard Focusable /simple Action",
+      "fingerprint": "e3048a119c774b09",
+      "target_file": "apps/web/components/continuity-bridge.tsx",
+      "memory_off": {
+        "candidate_attempts": 3,
+        "time_to_verified_patch_ms": 84100,
+        "wrong_file_edits_avoided": false,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 26500,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-002"
+      }
+    },
+    {
+      "scenario_id": "scen-06-simple-radio-fieldset-legend",
+      "scenario_title": "Fallback /simple Radio Group Missing Accessible Fieldset Legend",
+      "fingerprint": "f5512c990a318d67",
+      "target_file": "apps/web/components/booking-flow.tsx",
+      "memory_off": {
+        "candidate_attempts": 3,
+        "time_to_verified_patch_ms": 76900,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 23900,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-002"
+      }
+    },
+    {
+      "scenario_id": "scen-07-capability-token-query-forwarding",
+      "scenario_title": "Booking Confirmation Receipt Link Missing HMAC Capability Token",
+      "fingerprint": "71829b44e0193c55",
+      "target_file": "apps/web/components/booking-flow.tsx",
+      "memory_off": {
+        "candidate_attempts": 5,
+        "time_to_verified_patch_ms": 128300,
+        "wrong_file_edits_avoided": false,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 34700,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-003"
+      }
+    },
+    {
+      "scenario_id": "scen-08-arrow-key-grid-navigation",
+      "scenario_title": "Slot Grid ArrowRight/ArrowDown Focus Advancement Regression",
+      "fingerprint": "89014d22b7610a38",
+      "target_file": "apps/web/components/booking-flow.tsx",
+      "memory_off": {
+        "candidate_attempts": 4,
+        "time_to_verified_patch_ms": 95800,
+        "wrong_file_edits_avoided": false,
+        "verification_passed": true
+      },
+      "memory_on": {
+        "candidate_attempts": 1,
+        "time_to_verified_patch_ms": 30400,
+        "wrong_file_edits_avoided": true,
+        "verification_passed": true,
+        "lesson_id": "lesson-001"
+      }
+    }
+  ]
+}

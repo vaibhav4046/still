@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://still.example/contracts/gitlab-duo-trigger.v1.json",
+  "title": "STILL GitLab Duo flow trigger boundary",
+  "description": "Repository-owned contract for the optional, manually approved GitLab Duo Agent Platform trigger. This is not a GitLab schema replacement.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_version",
+    "method",
+    "path",
+    "authentication",
+    "protected_environment_variables",
+    "request",
+    "response_handling",
+    "safety"
+  ],
+  "properties": {
+    "contract_version": { "const": "1" },
+    "method": { "const": "POST" },
+    "path": { "const": "/api/v4/ai/duo_workflows/workflows" },
+    "authentication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["header", "transport"],
+      "properties": {
+        "header": { "const": "PRIVATE-TOKEN" },
+        "transport": { "const": "HTTPS" }
+      }
+    },
+    "protected_environment_variables": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "GITLAB_BASE_URL",
+          "GITLAB_PROJECT_ID",
+          "GITLAB_ACCESS_TOKEN",
+          "GITLAB_DUO_FLOW_ID",
+          "GITLAB_DUO_WORKFLOW_DEFINITION"
+        ]
+      },
+      "minItems": 3
+    },
+    "request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required_fields", "selector_rule", "start_workflow"],
+      "properties": {
+        "required_fields": {
+          "const": ["project_id", "goal", "start_workflow"]
+        },
+        "selector_rule": {
+          "const": "exactly one of workflow_definition or ai_catalog_item_consumer_id"
+        },
+        "start_workflow": { "const": true },
+        "optional_fields": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "response_handling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["success_status", "recorded_fields", "secret_policy"],
+      "properties": {
+        "success_status": { "const": [201] },
+        "recorded_fields": {
+          "const": ["id", "status", "web_url", "project_id", "workflow_definition"]
+        },
+        "secret_policy": { "const": "never persist or print the access token" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["manual_only", "bounded_goal", "no_automatic_deploy"],
+      "properties": {
+        "manual_only": { "const": true },
+        "bounded_goal": { "const": true },
+        "no_automatic_deploy": { "const": true }
+      }
+    }
+  }
+}

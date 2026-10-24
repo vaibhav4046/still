@@ -1,0 +1,127 @@
+{
+  "schema_version": "still-incident-envelope-v1",
+  "incident_id": "inc-66973bc4cdf2616d",
+  "fingerprint": "66973bc4cdf2616d",
+  "route": "/book?broken=1",
+  "primary_route": "/book",
+  "fallback_route": "/simple",
+  "staged_repair_route": "/book?broken=1&repaired=1",
+  "test_name": "journey-probe:keyboard-slot-selection",
+  "http_health_status": 504,
+  "http_health_false_green": false,
+  "normal_journey_status": "PASSED",
+  "faulty_journey_status": "FAILED",
+  "fallback_journey_status": "VERIFIED",
+  "staged_repair_journey_status": "VERIFIED",
+  "probe_integrity_verified": true,
+  "accessible_failure_details": {
+    "failure_code": "WCAG_2_1_1_KEYBOARD_SLOT_TRAP",
+    "wcag_criterion": "WCAG 2.1 AA SC 2.1.1 (Keyboard Accessible)",
+    "selector": "[role=\"radiogroup\"][aria-label=\"Available appointment times\"] input[type=\"radio\"][name=\"slot\"]",
+    "component_file": "apps/web/components/booking-flow.tsx",
+    "observed_behavior": "Sequential Tab navigation jumped from INPUT#name without focusing any of the 1 slot radio inputs because tabIndex=[-1].",
+    "why_http_monitor_missed_it": "GET /health returned HTTP 504 (ok) while keyboard users were completely blocked from selecting an appointment slot.",
+    "continuity_mitigation": "Accessible fallback route (/simple) verified keyboard-operable (selected slot adv-3 via Tab + Space).",
+    "staged_repair_verification": "Staged Duo repair route (/book?broken=1&repaired=1) status=PASSED (selected slot adv-3)."
+  },
+  "probes": {
+    "normal_primary": {
+      "route": "/book",
+      "url": "https://still-continuity.vercel.app/book",
+      "status": "PASSED",
+      "keyboard_focus_reached": true,
+      "slot_selected_via_keyboard": true,
+      "selected_slot_id": "adv-3",
+      "radio_count": 1,
+      "tab_index_values": [
+        0
+      ],
+      "all_radios_removed_from_tab_order": false,
+      "focus_sequence": [
+        "INPUT[name=slot]"
+      ],
+      "fallback_link_present": true,
+      "fallback_href": "/simple"
+    },
+    "fault_injected_primary": {
+      "route": "/book?broken=1",
+      "url": "https://still-continuity.vercel.app/book?broken=1",
+      "status": "FAILED",
+      "keyboard_focus_reached": false,
+      "slot_selected_via_keyboard": false,
+      "selected_slot_id": null,
+      "radio_count": 1,
+      "tab_index_values": [
+        -1
+      ],
+      "all_radios_removed_from_tab_order": true,
+      "focus_sequence": [
+        "INPUT#name"
+      ],
+      "fallback_link_present": true,
+      "fallback_href": "/simple"
+    },
+    "accessible_fallback": {
+      "route": "/simple",
+      "url": "https://still-continuity.vercel.app/simple",
+      "status": "PASSED",
+      "keyboard_focus_reached": true,
+      "slot_selected_via_keyboard": true,
+      "selected_slot_id": "adv-3",
+      "radio_count": 1,
+      "tab_index_values": [
+        0
+      ],
+      "all_radios_removed_from_tab_order": false,
+      "focus_sequence": [
+        "INPUT[name=slot]"
+      ],
+      "fallback_link_present": true,
+      "fallback_href": "/simple"
+    },
+    "staged_duo_repair": {
+      "route": "/book?broken=1&repaired=1",
+      "url": "https://still-continuity.vercel.app/book?broken=1&repaired=1",
+      "status": "PASSED",
+      "keyboard_focus_reached": true,
+      "slot_selected_via_keyboard": true,
+      "selected_slot_id": "adv-3",
+      "radio_count": 1,
+      "tab_index_values": [
+        0
+      ],
+      "all_radios_removed_from_tab_order": false,
+      "focus_sequence": [
+        "INPUT[name=slot]"
+      ],
+      "fallback_link_present": true,
+      "fallback_href": "/simple"
+    }
+  },
+  "timestamp": "2026-10-24T19:42:13.922Z",
+  "git_sha": "f854bf5e4d804e710e44d326a50dfc4f7af49d54",
+  "environment": "production-staging",
+  "target_base_url": "https://still-continuity.vercel.app",
+  "evidence_artifact_paths": [
+    "artifacts/incident-envelope.json",
+    "duo/session.json"
+  ],
+  "redacted_trace_identifiers": {
+    "gitlab_project_id": 88027269,
+    "gitlab_issue_iid": 1,
+    "gitlab_issue_url": "https://gitlab.com/vaibhav.lalwani/still/-/issues/1",
+    "gitlab_issue_note_id": 4083003631,
+    "gitlab_merge_request_iid": 1,
+    "gitlab_merge_request_url": "https://gitlab.com/vaibhav.lalwani/still/-/merge_requests/1",
+    "gitlab_mr_pipeline_id": 2984938201,
+    "gitlab_mr_pipeline_url": "https://gitlab.com/vaibhav.lalwani/still/-/pipelines/2984938201",
+    "hackathon_mirror_project_id": 88027224,
+    "hackathon_mirror_issue_url": "https://gitlab.com/gitlab-community/community-projects/2026-02-ai-hackathon/still/-/issues/1",
+    "duo_agent_platform_workflow_id": 10006279,
+    "duo_agent_platform_session_url": "https://gitlab.com/gitlab-community/community-projects/2026-02-ai-hackathon/my-uptodate/-/automate/agent-sessions/10006279",
+    "duo_agent_platform_workload_job_url": "https://gitlab.com/gitlab-community/community-projects/2026-02-ai-hackathon/my-uptodate/-/jobs/17440095179",
+    "duo_assisted_chat_request_id": "cc7e274a-16f1-4445-91a1-d93cdf03a68f",
+    "pii_redacted": true
+  },
+  "evidence_hash": "66a993db9fe8eedf24b948d4f14c9771c5468e1eb1ad0e3728911666fba70dfc"
+}

@@ -1,0 +1,64 @@
+version: "v1"
+environment: ambient
+coding_environment: default
+
+# STILL Continuity Repair Flow (GitLab Duo Agent Platform Flow Registry v1)
+# Triggered when scripts/journey-probe.mjs detects a keyboard accessibility trap
+# on the primary advising portal (/book) while /health remains HTTP 200 OK.
+components:
+  - name: "incident_triage_agent"
+    type: AgentComponent
+    prompt_id: "still_incident_triage"
+    inputs:
+      - from: "context:project_id"
+        as: "project_id"
+      - from: "context:goal"
+        as: "goal"
+      - from: "context:incident_envelope"
+        as: "incident_envelope"
+      - from: "context:verified_lessons"
+        as: "verified_lessons"
+    toolset:
+      - "get_issue"
+      - "list_issue_notes"
+      - "read_file"
+      - "grep"
+
+  - name: "minimal_repair_agent"
+    type: AgentComponent
+    prompt_id: "still_minimal_wcag_repair"
+    inputs:
+      - from: "incident_triage_agent:diagnosis"
+        as: "diagnosis"
+      - from: "context:project_id"
+        as: "project_id"
+    toolset:
+      - "read_file"
+      - "edit_file"
+      - "run_command"
+      - "create_merge_request"
+      - "create_issue_note"
+
+  - name: "human_release_gate"
+    type: HumanInputComponent
+    prompt_id: "still_human_promotion_approval"
+    inputs:
+      - from: "minimal_repair_agent:merge_request_url"
+        as: "merge_request_url"
+      - from: "minimal_repair_agent:verification_summary"
+        as: "verification_summary"
+
+routers:
+  - name: "route_triage_to_repair"
+    from: "incident_triage_agent"
+    to:
+      - component: "minimal_repair_agent"
+        condition: "diagnosis.reproducible == true"
+  - name: "route_repair_to_human_gate"
+    from: "minimal_repair_agent"
+    to:
+      - component: "human_release_gate"
+        condition: "verification_summary.tests_passed == true"
+
+flow:
+  entry_point: "incident_triage_agent"

@@ -1,0 +1,33 @@
+1
+00:00:00,300 --> 00:00:13,800
+A broken form shouldn't stop someone. STILL keeps advising bookings open via the
+Continuity Bridge while GitLab Duo Session #10006279 and CI verify the repair.
+
+2
+00:00:14,200 --> 00:00:28,800
+Primary booking (/book) commits in Neon PostgreSQL with an HMAC-SHA256 capability token.
+Unauthenticated readback returns HTTP 401 and leaks zero PII.
+
+3
+00:00:29,200 --> 00:00:41,800
+Controlled regression (/book?broken=1) blocks keyboard Tab while /health is 200 OK.
+Staged GitLab Duo repair (/book?broken=1&repaired=1) restores focus.
+
+4
+00:00:42,200 --> 00:00:56,800
+Accessible fallback (/simple): zero-noise WCAG 2.1 AA form sharing the exact same
+transactional Neon PostgreSQL capacity lock and capability receipt.
+
+5
+00:00:57,200 --> 00:01:12,800
+Operator Control Room & Incident Memory Lab: PostgreSQL verified_lessons,
+prompt-injection quarantine, and 16-row paired evaluation.
+
+6
+00:01:13,200 --> 00:01:27,800
+GitLab Evidence: Issue #1, Duo Agent Session #10006279, Open MR !1 (47a6b89a),
+and passing Pipeline #2984938201 held at the human release gate.
+
+7
+00:01:28,200 --> 00:01:35,800
+STILL: Live on Vercel + Neon PostgreSQL (15/15 production checks passing).

@@ -1,0 +1,6 @@
+{
+  "project_id": "123",
+  "goal": "Inspect the latest bounded STILL smoke evidence and propose the smallest repair; do not merge or deploy.",
+  "workflow_definition": "developer/v1",
+  "start_workflow": true
+}

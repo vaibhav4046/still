@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS services (id TEXT PRIMARY KEY, name TEXT NOT NULL, description TEXT NOT NULL, duration_minutes INTEGER NOT NULL, active INTEGER NOT NULL DEFAULT 1);
+CREATE TABLE IF NOT EXISTS slots (id TEXT PRIMARY KEY, service_id TEXT NOT NULL, starts_at TEXT NOT NULL, ends_at TEXT NOT NULL, capacity INTEGER NOT NULL, remaining_capacity INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS bookings (id TEXT PRIMARY KEY, service_id TEXT NOT NULL, slot_id TEXT NOT NULL, attendee_name TEXT NOT NULL, attendee_email TEXT NOT NULL, status TEXT NOT NULL, confirmation_reference TEXT NOT NULL UNIQUE, confirmation_code TEXT NOT NULL, idempotency_key TEXT NOT NULL UNIQUE, request_fingerprint TEXT NOT NULL, created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS incidents (id TEXT PRIMARY KEY, journey_id TEXT NOT NULL, release_sha TEXT, failure_class TEXT NOT NULL, summary TEXT NOT NULL, severity TEXT NOT NULL, status TEXT NOT NULL, evidence_uri TEXT, created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS timeline_events (id TEXT PRIMARY KEY, event TEXT NOT NULL, status TEXT NOT NULL, summary TEXT NOT NULL, occurred_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS policies (id TEXT PRIMARY KEY, name TEXT NOT NULL, status TEXT NOT NULL, description TEXT NOT NULL);

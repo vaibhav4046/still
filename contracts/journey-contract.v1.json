@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://still.example/contracts/journey-contract.v1.json",
+  "title": "STILL Journey Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_version", "journey_id", "source_sha", "environment", "interaction_mode", "verdict"],
+  "properties": {
+    "contract_version": { "const": "1" },
+    "journey_id": { "type": "string", "minLength": 1 },
+    "source_sha": { "type": "string", "minLength": 1 },
+    "environment": { "type": "string", "minLength": 1 },
+    "interaction_mode": { "enum": ["mouse", "keyboard", "fallback", "fallback-without-js", "narrow-mobile"] },
+    "booking_id": { "type": ["string", "null"] },
+    "confirmation_reference": { "type": ["string", "null"] },
+    "test_artifact_uri": { "type": ["string", "null"] },
+    "api_readback": { "type": "boolean" },
+    "verdict": { "enum": ["PASS", "FAIL", "INSUFFICIENT_EVIDENCE", "DEPLOY_BLOCKED"] },
+    "reason": { "type": "string" },
+    "verified_at": { "type": ["string", "null"] }
+  }
+}

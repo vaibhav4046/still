@@ -1,0 +1,17 @@
+target/
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+.env
+.env.local
+data/*.db
+data/*.db-*
+*.log
+.vercel/
+media/raw/
+media/final/audio_parts/
+media/final/*.wav
+.vercel
